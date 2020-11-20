@@ -20,6 +20,7 @@ namespace Lesson6Feedback
    /// </summary>
    public partial class MainWindow : Window
    {
+      //this is a comment
       public MainWindow()
       {
          InitializeComponent();

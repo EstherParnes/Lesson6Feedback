@@ -1,0 +1,31 @@
+﻿<Window x:Class="PopulateAListBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopulateAListBox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="800">
+   <Grid Name="MainGrid">
+      <Grid.RowDefinitions>
+         <RowDefinition Height="100*"/>
+         <RowDefinition Height="400*"/>
+      </Grid.RowDefinitions>
+      <Grid Name ="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="stretch" Width="auto">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+         </Grid.ColumnDefinitions>
+         <Label Content="Name of zoo" HorizontalAlignment="Stretch"  VerticalAlignment="stretch"/>
+
+         <Label Content="Type of zoo" Grid.Column="2" HorizontalAlignment="Stretch"  VerticalAlignment="stretch"/>
+         <ComboBox Name="CBzooName" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Center" SelectionChanged="CBzooName_SelectionChanged" />
+         <TextBox Name ="TBzooType" Grid.Column="3" HorizontalAlignment="Stretch"   VerticalAlignment="Center" Text="{Binding Path=ZooType}" FontFamily="Tahoma" Margin="0,0,25,0" />
+      </Grid>
+      <ListBox Name ="LBAnimalList" HorizontalAlignment="Stretch" Height="321"  Grid.Row="1" VerticalAlignment="Stretch" Width="504" ItemsSource="{Binding}"/>
+
+
+   </Grid>
+</Window>
